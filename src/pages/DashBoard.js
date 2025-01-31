@@ -1,6 +1,11 @@
 import Card from "../components/Cards";
 import userIcon from "../assests/topBar-icons/profile.svg"
 import welcomeBg from "../assests/welcome-card/Group 37232.svg"
+import crownIcon from "../assests/card-icons/crown.svg"
+import ideaIcon from "../assests/card-icons/lamp-charge.svg"
+import filterIcon from "../assests/card-icons/filter.svg"
+
+import bagIcon from "../assests/card-icons/bag.svg"
 
 function Dashboard() {
   return (
@@ -28,6 +33,7 @@ function Dashboard() {
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-gray-100 rounded-xl mt-4">
         <Card
+icon={crownIcon}
           title="Business Elite Package"
           description="Premium business support with company setup, compliance, accounting, and payroll solutions."
           price="7,628"
@@ -36,6 +42,7 @@ function Dashboard() {
           large={true} 
         />
         <Card
+        icon={bagIcon}
           title="Incorporation Package"
           description="Effortless business setup with all-inclusive incorporation services."
           price="770"
@@ -43,6 +50,7 @@ function Dashboard() {
         
         />
         <Card
+icon={ideaIcon}
           title="Founders Starter Package"
           description="Kickstart your business with hassle-free company registration and compliance."
           price="2,885"
@@ -50,6 +58,7 @@ function Dashboard() {
           large={true}
         />
         <Card
+         icon={filterIcon}
           title="Personalized Package"
           description="Design your own package with customized services for your needs."
         />

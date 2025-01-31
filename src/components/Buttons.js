@@ -5,7 +5,7 @@ const Button = ({ children, variant = "primary", ...props }) => {
     if (variant === "primary") {
       variantStyles = "bg-black text-white hover:bg-gray-800";
     } else if (variant === "compare") {
-      variantStyles = "bg-blue-100 text-white border text-black text-sm ";
+      variantStyles = "bg-blue-100  border text-black text-sm ";
     } else if (variant === "hoveredCompare") {
       variantStyles = "bg-white text-black border text-black text-sm ";
     }
