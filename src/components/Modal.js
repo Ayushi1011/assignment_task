@@ -250,19 +250,19 @@ const Modal = ({ isOpen, onClose }) => {
 
             {/* Buy Now Buttons in their respective columns */}
             <div className="flex flex-col gap-4 items-center">
-              <button className="bg-black text-white px-6 py-2 rounded-lg">
+              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500">
                 Buy Now
               </button>
             </div>
 
             <div className="flex flex-col gap-4 items-center">
-              <button className="bg-black text-white px-6 py-2 rounded-lg">
+              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500">
                 Buy Now
               </button>
             </div>
 
             <div className="flex flex-col gap-4 items-center">
-              <button className="bg-black text-white px-6 py-2 rounded-lg">
+              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500">
                 Buy Now
               </button>
             </div>

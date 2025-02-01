@@ -3,11 +3,11 @@ const Button = ({ children, variant = "primary", ...props }) => {
     let variantStyles = "";
   
     if (variant === "primary") {
-      variantStyles = "bg-black text-white hover:bg-gray-800";
+      variantStyles = "bg-black text-white hover:bg-blue-500";
     } else if (variant === "compare") {
       variantStyles = "bg-blue-100  border text-black text-sm ";
     } else if (variant === "hoveredCompare") {
-      variantStyles = "bg-white text-black border text-black text-sm ";
+      variantStyles = "bg-white text-black border text-black text-sm hover:bg-blue-300";
     }
   
     return (
