@@ -50,7 +50,7 @@ const LocationSelection = () => {
     <div 
       className="absolute right-0 mt-2 w-[180px] max-w-[200px] bg-[#A6D2FF]  rounded-lg shadow-lg p-2 overflow-hidden z-50"
       
-    > {/* 🔹 Used 'top-full left-0' to fix dropdown position */}
+    >
       <div className="flex justify-between p-3 border-b border-gray-200 text-sm bg-white rounded-lg mb-2">
         <span>Business Elite</span>
         <span>$0.00</span>
