@@ -1,133 +1,14 @@
-// import React, { useEffect } from "react";
-// import checkIcon from "../assests/modal-icons/Component 82 (1).svg"
-// import backIcon from "../assests/modal-icons/back.svg"
 
-// const Modal = ({ isOpen, onClose }) => {
-//   useEffect(() => {
-//     if (isOpen) {
-//       document.body.classList.add("overflow-hidden"); // Disable background scroll
-//     } else {
-//       document.body.classList.remove("overflow-hidden"); // Re-enable when closed
-//     }
-//   }, [isOpen]);
-
-//   if (!isOpen) return null;
-
-//   return (
-//     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-//       <div className="bg-white rounded-2xl shadow-xl w-full max-w-7xl p-8 relative">
-//         {/* Close Button (Top-Right) */}
-//         <button
-//           className="absolute top-3 right-3 text-gray-600 hover:text-gray-800 text-xl"
-//           onClick={onClose}
-//         >
-//           ✕
-//         </button>
-
-//         {/* Header - Package Names */}
-//         <div className="text-center text-lg font-semibold mb-6">
-//           <div className="grid grid-cols-4 gap-4">
-//             {/* Empty space in the first column */}
-//             <div></div>
-//             <h3>Founders Starter Package</h3>
-//             <h3 className="relative font-bold text-blue-600">
-//               Business Elite Package
-//               <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs px-2 py-1 rounded-lg border border-blue-600">
-//   Most popular
-// </span>
-
-//             </h3>
-//             <h3>Incorporation Package</h3>
-//           </div>
-//         </div>
-
-//         {/* Price Row */}
-//         <div className="grid grid-cols-4 bg-blue-100 p-3 text-center font-semibold mb-6 rounded-lg">
-//           <span test-left>Price</span>
-//           <span className="text-black">$2,885<span className="text-gray-500 text-sm">/Annual</span></span>
-//           <span className="text-blue-600">$7,628<span className="text-gray-500 text-sm">/Annual</span></span>
-//           <span className="text-black">$2,120<span className="text-gray-500 text-sm">/Annual</span></span>
-//         </div>
-
-//         {/* Feature Comparison Table */}
-//         <div className="divide-y divide-gray-200">
-//           {[
-//             "Business Setup - Freezone", 
-//             "VAT Registration", 
-//             "VAT Profile Amendments", 
-//             "Corporate Tax Registration", 
-//             "VAT Returns - Quarterly", 
-//             "Basic Books - Annually", 
-//             "Professional Books & MIS - Monthly", 
-//             "VAT Consultancy"
-//           ].map((feature, index) => (
-//             <div key={index} className="grid grid-cols-4 text-left py-2 px-4">
-//               <span className="text-gray-700">{feature}</span>
-//               {/* Custom Icon from assets */}
-//               <img 
-//                 src={checkIcon } // Path to your icon image
-//                 alt="Icon"
-//                 className="w-6 h-6 mx-auto"
-//               />
-//               <img 
-//            src={checkIcon }  // Path to your icon image
-//                 alt="Icon"
-//                 className="w-6 h-6 mx-auto"
-//               />
-//               <img 
-//                 src={checkIcon }  // Path to your icon image
-//                 alt="Icon"
-//                 className="w-6 h-6 mx-auto"
-//               />
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* Footer Buttons */}
-//         <div className="mt-6">
-//           <div className="grid grid-cols-4 gap-4 w-full">
-//             {/* Empty space for Close Button */}
-          
-//               <img 
-//                 src={backIcon } // Path to your icon image
-//                 alt="Icon"
-//                 className="w-10 h-10 ml-3 mx-auto"
-//                 onClick={onClose}
-//               />
-     
-
-//             {/* Buy Now Buttons in their respective columns */}
-//             <div className="flex flex-col gap-4 items-center">
-//               <button className="bg-black text-white px-6 py-2 rounded-lg">
-//                 Buy Now
-//               </button>
-//             </div>
-
-//             <div className="flex flex-col gap-4 items-center">
-//               <button className="bg-black text-white px-6 py-2 rounded-lg">
-//                 Buy Now
-//               </button>
-//             </div>
-
-//             <div className="flex flex-col gap-4 items-center">
-//               <button className="bg-black text-white px-6 py-2 rounded-lg">
-//                 Buy Now
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Modal;
 
 import React, { useEffect } from "react";
 import checkIcon from "../assests/modal-icons/Component 82 (1).svg";
 import backIcon from "../assests/modal-icons/back.svg";
+import { useNavigate } from "react-router-dom"
+
 
 const Modal = ({ isOpen, onClose }) => {
+
+   const navigate = useNavigate();
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("overflow-hidden"); // Disable background scroll
@@ -239,7 +120,7 @@ const Modal = ({ isOpen, onClose }) => {
         <div className="mt-6">
           <div className="grid grid-cols-4 gap-4 w-full">
             {/* Back Button */}
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center"  onClick={() => navigate('/')}>
               <img
                 src={backIcon} // Path to your icon image
                 alt="Back Icon"
@@ -250,19 +131,19 @@ const Modal = ({ isOpen, onClose }) => {
 
             {/* Buy Now Buttons in their respective columns */}
             <div className="flex flex-col gap-4 items-center">
-              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500">
+              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500"  onClick={() => navigate('/activities')}>
                 Buy Now
               </button>
             </div>
 
             <div className="flex flex-col gap-4 items-center">
-              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500">
+              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500" onClick={() => navigate('/activities')}>
                 Buy Now
               </button>
             </div>
 
             <div className="flex flex-col gap-4 items-center">
-              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500">
+              <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-blue-500" onClick={() => navigate('/activities')}>
                 Buy Now
               </button>
             </div>

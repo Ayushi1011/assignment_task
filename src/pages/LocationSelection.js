@@ -5,11 +5,13 @@ import checkIcon from "../assests/modal-icons/Component 82 (1).svg"
 import compareIcon from "../assests/location-icons/compare.svg"
 import backButton from "../assests/location-icons/backButton.svg"
 import shoppingCart from "../assests/location-icons/shopping-cart.svg"
+import { useNavigate } from "react-router-dom"
 
 const LocationSelection = () => {
   const [selectedJurisdiction, setSelectedJurisdiction] = useState("");
   const [showDropdowns, setShowDropdowns] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
 
   const jurisdictions = [
@@ -66,7 +68,7 @@ const LocationSelection = () => {
   )}
   </div>
 </div>
-      <h2 className="text-xl font-semibold mb-4 flex items-center">   <img src={backButton} alt="Checked" className="w-6 h-6" />Recommended Jurisdictions for Your Business</h2>
+      <h2 className="text-xl font-semibold mb-4 flex items-center" onClick={() => navigate('/activities')}>   <img src={backButton} alt="Checked" className="w-6 h-6 bg-gray-100 rounded " />Recommended Jurisdictions for Your Business</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
         {jurisdictions.map((jurisdiction) => (
@@ -169,7 +171,7 @@ const LocationSelection = () => {
       </div>
 
       <div className="mt-6">
-        <Button variant="primary">Next</Button>
+        <Button variant="primary" >Next</Button>
       </div>
     </div>
   );

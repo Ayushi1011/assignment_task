@@ -2,10 +2,12 @@ import { useState } from "react";
 import Button from "./Buttons";
 import lockIcon from "../assests/card-icons/lock.svg";
 import Modal from "./Modal";
+import { useNavigate } from "react-router-dom";
 
 const Cards = ({ icon, tag, title, description, price, frequency, tags, large }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleModalClose = () => {
     setIsModalOpen(false); // Close the modal
@@ -78,7 +80,7 @@ const Cards = ({ icon, tag, title, description, price, frequency, tags, large })
             >
               Compare
             </Button>
-            <Button variant="primary">Buy Now</Button>
+            <Button variant="primary" onClick={() => navigate('/activities')}>Buy Now</Button>
           </>
         )}
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Button from "../components/Buttons";
 import shoppingCart from "../assests/location-icons/shopping-cart.svg"
+import { useNavigate } from "react-router-dom"
 import backButton from "../assests/location-icons/backButton.svg"
-
 
 
 export default function BusinessOverview() {
@@ -22,6 +22,7 @@ const [isOpen, setIsOpen] = useState(false);
     none: false,
   });
 
+    const navigate = useNavigate();
   const industries = [
     "Healthcare",
     "Manufacturing",
@@ -111,7 +112,7 @@ const [isOpen, setIsOpen] = useState(false);
   </div>
 
       {/* Industry Selection Section */}
-      <h2 className="text-xl font-semibold mb-4 flex items-center">   <img src={backButton} alt="Checked" className="w-6 h-6" />
+      <h2 className="text-xl font-semibold mb-4 flex items-center"  onClick={() => navigate('/')}>   <img src={backButton} alt="Checked" className="w-6 h-6 bg-gray-100 rounded" />
           Identify the industries or sectors that best describe your business operations.
         </h2>
       <div className="p-4 rounded-lg bg-[#f8f8f8] mb-6">
@@ -265,7 +266,7 @@ const [isOpen, setIsOpen] = useState(false);
         </div>
       </div>
 
-      <Button variant="primary">Next</Button>
+      <Button variant="primary"  onClick={() => navigate('/location')}>Next</Button>
     </div>
   );
 }
