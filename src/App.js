@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import Dashboard from "./pages/DashBoard"; 
+import Dashboard from "./pages/DashBoard";
 import Activities from "./pages/Activities";
 import LocationSelection from "./pages/LocationSelection";
 

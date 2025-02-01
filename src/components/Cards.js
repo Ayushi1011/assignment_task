@@ -4,16 +4,23 @@ import lockIcon from "../assests/card-icons/lock.svg";
 import Modal from "./Modal";
 import { useNavigate } from "react-router-dom";
 
-const Cards = ({ icon, tag, title, description, price, frequency, tags, large }) => {
+const Cards = ({
+  icon,
+  tag,
+  title,
+  description,
+  price,
+  frequency,
+  tags,
+  large,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleModalClose = () => {
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
   };
-
-
 
   return (
     <div
@@ -24,10 +31,11 @@ const Cards = ({ icon, tag, title, description, price, frequency, tags, large })
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Icon and Tag */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center space-x-2">
-          {icon && <img src={icon} alt={`${title} icon`} className="w-10 h-10" />}
+          {icon && (
+            <img src={icon} alt={`${title} icon`} className="w-10 h-10" />
+          )}
           {tag && (
             <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-md">
               {tag}
@@ -43,11 +51,13 @@ const Cards = ({ icon, tag, title, description, price, frequency, tags, large })
         )}
       </div>
 
-      {/* Additional Tags */}
       <div className="flex items-center justify-between">
         <div className="flex gap-2">
           {tags?.map((tag, index) => (
-            <span key={index} className="bg-blue-500 text-white px-2 py-1 text-xs rounded-md">
+            <span
+              key={index}
+              className="bg-blue-500 text-white px-2 py-1 text-xs rounded-md"
+            >
               {tag}
             </span>
           ))}
@@ -61,10 +71,8 @@ const Cards = ({ icon, tag, title, description, price, frequency, tags, large })
       {/* Buttons Section */}
       <div className="flex gap-3 mt-4">
         {title === "Personalized Package" ? (
-          <Button  variant={isHovered ? "hoveredCompare" : "compare"}>
-    
-              <img src={lockIcon} alt="Lock" className="w-4 h-4 " />
-            
+          <Button variant={isHovered ? "hoveredCompare" : "compare"}>
+            <img src={lockIcon} alt="Lock" className="w-4 h-4 " />
           </Button>
         ) : (
           <>
@@ -80,7 +88,9 @@ const Cards = ({ icon, tag, title, description, price, frequency, tags, large })
             >
               Compare
             </Button>
-            <Button variant="primary" onClick={() => navigate('/activities')}>Buy Now</Button>
+            <Button variant="primary" onClick={() => navigate("/activities")}>
+              Buy Now
+            </Button>
           </>
         )}
 
@@ -88,12 +98,17 @@ const Cards = ({ icon, tag, title, description, price, frequency, tags, large })
         {title !== "Personalized Package" && frequency !== "one time" && (
           <div className="ml-auto text-right">
             <span className="text-sm text-black-500">$</span>
-            <span className="text-2xl font-semibold text-gray-900">{price}</span>
+            <span className="text-2xl font-semibold text-gray-900">
+              {price}
+            </span>
             <span className="text-sm text-black-500">/year</span>
           </div>
         )}
       </div>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(handleModalClose)} />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(handleModalClose)}
+      />
     </div>
   );
 };
